@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, useState  } from "react";
+import RefillRx from './components/refillrx';
+import ConfirmRx from './components/confirmrx';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './styles.css';
+
+function App () {
+    const [page, setPage] = useState('refill'); // state
+    const [areaData, setAreaData] = useState(''); // state
+ 
+    const changePage = (areaData) => {
+      setAreaData(areaData)
+      setPage('confirm')
+    }
+    return(
+      <div className="App">
+        {page === 'refill' ?  <RefillRx changePage={ areaData => changePage(areaData)} /> : <ConfirmRx areaData={areaData} /> }
+      </div>
+    )
+  
 }
 
 export default App;
