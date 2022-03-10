@@ -5,7 +5,7 @@ import ConfirmRx from './components/confirmrx';
 import './styles.css';
 
 function App () {
-    const [page, setPage] = useState('refill'); // state
+    const [page, setPage] = useState('confirm'); // state
     const [areaData, setAreaData] = useState(''); // state
  
     const changePage = (areaData) => {

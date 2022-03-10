@@ -1,4 +1,5 @@
 import React, {Component, useState} from 'react';
+import Button from '@mui/material/Button';
 
 const RefillRx = (props) =>{
     const [areaInput, setAreaInput] = useState( {});
@@ -19,7 +20,7 @@ const RefillRx = (props) =>{
           <div>
             <textarea className="refill-payload-text" onChange={ e => handleChange(e)}>{JSON.stringify(areaInput)}</textarea>
           </div>
-          <button type="button" className="button-5" onClick={ e => onRefillSubmit()}> SUBMIT</button> 
+          <Button variant="contained" type="button" onClick={ e => onRefillSubmit()}> SUBMIT</Button> 
         </div>
       </div>
     )
